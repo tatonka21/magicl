@@ -56,54 +56,8 @@
            #:some
            #:notevery
            #:notany)
-  (:export #:*type-strictness*          ; VARIABLE
-           #:S #:D #:C #:Z              ; SYMBOLS
-           #:matrix                     ; TYPE, FUNCTION
-           #:make-matrix                ; FUNCTION
-           #:matrix-rows                ; READER
-           #:matrix-cols                ; READER
-           #:matrix-element-type        ; FUNCTION
-           #:make-zero-matrix           ; FUNCTION
-           #:square-matrix-p            ; FUNCTION
-           #:identityp                  ; FUNCTION
-           #:unitaryp                   ; FUNCTION
-           #:map-indexes                ; FUNCTION
-           #:tabulate                   ; FUNCTION
-           #:make-identity-matrix       ; FUNCTION
-           #:print-availability-report
-           #:with-blapack
-           #:make-complex-matrix
-           #:conjugate-entrywise
-           #:transpose
-           #:conjugate-transpose
-           #:qr
-           #:ql
-           #:rq
-           #:lq
-           #:svd
-           #:multiply-complex-matrices
-           #:scale
-           #:ref
-           #:csd
-           #:lapack-csd
-           #:det
-           #:inv
-           #:dagger
-           #:direct-sum
-           #:diag
-           #:matrix-diagonal
-           #:expm
-           #:eig
-           #:logm
-           #:kron
-           #:exptm
-           #:inc-matrix
-           #:dec-matrix
-           #:add-matrix
-           #:sub-matrix
+  (:export #:with-blapack
            
-           ;; New stuff
-
            ;; abstract-tensor protocol
            #:specialize-tensor
            #:generalize-tensor
@@ -114,6 +68,14 @@
            #:element-type
            #:lisp-array
 
+           #:every
+           #:some
+           #:notevery
+           #:notany
+
+           #:map
+           #:map!
+           
            ;; Classes
            #:tensor
            #:matrix
@@ -137,15 +99,42 @@
            #:arange
            #:from-array
            #:from-list
+           #:from-diag
+
+           #:random-unitary
 
            ;; Operators
            #:+
            #:-
+           #:=
+           #:map
+           
+           ;; Matrix operators
+           #:square-matrix-p
+           #:identity-matrix-p
            #:@
-           )
+           #:kron
+           #:scale
+           #:scale!
+           #:diag
+           #:det
+           #:transpose
+           #:transpose!
+           #:orthonormalize
+           #:orthonormalize!
+           #:trace
+           #:direct-sum
+           #:conjugate-transpose
+           #:dagger
+           #:eig
+           #:lu
+           #:csd
+           #:svd
+           #:ql
+           #:qr
+           #:rq
+           #:lq
 
-  ;; random.lisp
-  (:export #:random-matrix              ; FUNCTION
-           #:random-gaussian-matrix     ; FUNCTION
-           #:random-unitary             ; FUNCTION
+           ;; LAPACK stuff
+           #:lapack-csd
            ))
